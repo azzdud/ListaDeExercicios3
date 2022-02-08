@@ -12,9 +12,33 @@ namespace Exercício1.ConsoleApp
     {
         static void Main(string[] args)
         {
-            decimal altura;
+            double maiorAlt = 0, menorAlt = 1000, alt;
 
-            Console.WriteLine("Digite a altura 1: ");
+            for (int i = 0; i < 15; i++) 
+            {
+                Console.Write("Digite a altura número " + i + ": ");
+                alt = Convert.ToDouble(Console.ReadLine());
+
+                if (alt > maiorAlt)
+                {
+                    maiorAlt = alt;
+                }
+                if (alt < menorAlt)
+                {
+                    menorAlt = alt;
+                }
+            }
+            Console.Write("\nA maior altura é ");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write(maiorAlt);
+            Console.ResetColor();
+
+            Console.Write("\nE a menor altura é ");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.Write(menorAlt);
+            Console.ResetColor();
+
+            Console.ReadLine();
         }
     }
 }
